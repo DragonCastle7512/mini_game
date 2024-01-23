@@ -1,0 +1,144 @@
+canvas {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#setting {
+    left: 5%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 630px;
+    margin: 100px;
+    position: absolute;
+    border: 1px solid black;
+    background-color:white;
+    display: block;
+}
+
+#setting_text_div {
+    width: auto;
+    height: 10%;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: aliceblue;
+}
+
+#setting_controllor_div {
+    width: auto;
+    height: 565px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding-left: 10px;
+}
+
+.setting_bar {
+    position: absolute;
+    accent-color: gray;
+    height: 5px;
+    margin-top: 8px;
+}
+
+#setting_text {
+    text-align: center;
+    font-size: 32pt;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.theme {
+    width: 40px;
+    height: 40px;
+    margin-left: 30%;
+    margin-top: 30px;
+    float: left;
+    background-color: white;
+    border: 1px solid gray;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 30%;
+}
+
+.theme:hover {
+    width: 45px;
+    height: 45px;
+}
+
+.theme_div {
+    width: 50%;
+    height: auto;
+    /*border: 1px solid black;*/
+}
+
+.theme_infor {
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+    float: left;
+    position: absolute;
+    color: gray;
+    font-weight: normal;
+    /*border: 1px solid black;*/
+}
+
+#first_theme_infor {
+    color: black;
+    font-weight: bold;
+}
+
+#autumn {
+    background-color: rgb(228, 110, 32);
+}
+
+#forest {
+    background-color: rgb(24, 143, 24);
+}
+
+#ice {
+    background-color: rgb(138, 231, 231);
+}
+
+#ocean {
+    background-color: rgb(53, 56, 233);
+}
+
+#void {
+    background-color: rgb(119, 9, 119);
+}
+
+#space {
+    background-color: black;
+}
+
+#score_board {
+    position: absolute;
+    text-align: center;
+    right: 10%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 10px;
+    height: auto;
+    /*border: 1px solid black;*/
+}
+
+#score {
+    font-size: 20pt;
+}
+
+#best_score {
+    font-size: 20pt;
+}
+
+#guide {
+    font-size: 15pt;
+    position: absolute;
+    bottom: 200px;
+    right: 200px;
+    text-align: center;
+    width: 260px;
+    height: 100px;
+    display: block;
+}
