@@ -42,18 +42,18 @@ function canvas_reset() {
     x = canvas.width/2-size/2;
     y = canvas.height/2-size/2;
     board_size = size/3.5;
-    Character.chr_x = x + size/2;
-    Character.chr_y = y + size/2;
-    Character.chr_size = board_size*chr_size_value;
+    character.chr_x = x + size/2;
+    character.chr_y = y + size/2;
+    character.chr_size = board_size*chr_size_value;
     
     Background.draw();
-    Character.draw();
+    character.draw();
 }
 
 //초기 테마 색상
 var main_color = "black";
 var board_color = "white";
-var danger_color_01 = "rgb(255,112, 18)";
+var danger_color_01 = "rgb(255, 112, 18)";
 var danger_color_02 = "red";
 
 //테마 설정
@@ -74,7 +74,7 @@ function setting_theme(num) {
         case 1:
             main_color = "black";
             board_color = "white";
-            danger_color_01 = "rgb(255,112, 18)";
+            danger_color_01 = "rgb(255, 112, 18)";
             danger_color_02 = "red";
             break;
         case 2:
@@ -118,7 +118,7 @@ function setting_theme(num) {
 }
 
 //메인 보드
-var Background = {
+var background = {
     //흰색 보드 간격
     board_padding : 0,
     draw() {
@@ -139,7 +139,7 @@ var Background = {
 }
 
 //캐릭터
-var Character = {
+var character = {
     //중앙 설정
     chr_x : x + size/2,
     chr_y : y + size/2,
@@ -173,10 +173,10 @@ class Danger {
         }
 
         //흰 보드의 크기와 위치가 알맞는 위험 구역
-        var d_x = Background.board_padding/2+x+(size/3*this.dan_x);
-        var d_y = Background.board_padding/2+y+(size/3*this.dan_y);
-        var width = size/3-Background.board_padding;
-        var height = size/3-Background.board_padding;
+        var d_x = background.board_padding/2+x+(size/3*this.dan_x);
+        var d_y = background.board_padding/2+y+(size/3*this.dan_y);
+        var width = size/3-background.board_padding;
+        var height = size/3-background.board_padding;
 
         for(let i = 0; i<danger_list.length; i++) {
             ctx.fillRect(d_x, d_y, width, height);
@@ -228,14 +228,14 @@ function frame_timer() {
         }
     }
     //배경 그리기
-    Background.draw();
+    background.draw();
     
     //위험 지역 삭제 및 그리기
     danger_list.forEach((a, i, o)=> {
         //일정 시간이 지났을때
         if(a.time > danger_fre) {
             //충돌했다면 종료
-            if(collision(Character, a)) {
+            if(collision(character, a)) {
                 g_o_timer = 0;
                 //최고기록 갱신
                 if(b_score < score) {
@@ -253,13 +253,13 @@ function frame_timer() {
         a.draw();
     })
     //캐릭터 그리기
-    Character.draw();
+    character.draw();
 }
 
 var g_o_timer = 0;
 function game_over_timer_02() {
     g_o_timer++
-    g_o_time = requestAnimationFrame(game_over_timer_02);
+    let g_o_time = requestAnimationFrame(game_over_timer_02);
     //일정 시간 후에 작동
     if(g_o_timer > 40) {
         start = false;
@@ -271,32 +271,32 @@ function game_over_timer_02() {
 }
 
 //충돌
-function collision(Character, danger) {
-    var d_x = Background.board_padding/2+x+(size/3*danger.dan_x);
-    var d_y = Background.board_padding/2+y+(size/3*danger.dan_y);
-    var width = size/3-Background.board_padding;
-    var height = size/3-Background.board_padding;
+function collision(character, danger) {
+    var d_x = background.board_padding/2+x+(size/3*danger.dan_x);
+    var d_y = background.board_padding/2+y+(size/3*danger.dan_y);
+    var width = size/3-background.board_padding;
+    var height = size/3-background.board_padding;
 
     //캐릭터가 위험 구역에 닿았는지 여부
-    return ((d_x < Character.chr_x && Character.chr_x < d_x+width) && (d_y < Character.chr_y && Character.chr_y < d_y+height)) ? true : false;
+    return ((d_x < character.chr_x && character.chr_x < d_x+width) && (d_y < character.chr_y && character.chr_y < d_y+height)) ? true : false;
 }
 
 document.addEventListener("keydown", function(e) {
     //왼쪽 이동
-    if((e.code === 37 || e.key == "ArrowLeft") && Character.chr_x > size/3+x) {
-        Character.chr_x -= size/3;
+    if((e.code === 37 || e.key == "ArrowLeft") && character.chr_x > size/3+x) {
+        character.chr_x -= size/3;
     }
     //오른쪽 이동
-    else if((e.code === 39 || e.key == "ArrowRight") && Character.chr_x < size/3*2+x) {
-        Character.chr_x += size/3;
+    else if((e.code === 39 || e.key == "ArrowRight") && character.chr_x < size/3*2+x) {
+        character.chr_x += size/3;
     }
     //위 이동
-    else if((e.code === 38 || e.key == "ArrowUp") && Character.chr_y > size/3+y) {
-        Character.chr_y -= size/3;
+    else if((e.code === 38 || e.key == "ArrowUp") && character.chr_y > size/3+y) {
+        character.chr_y -= size/3;
     }
     //아래 이동
-    else if((e.code === 40 || e.key == "ArrowDown") && Character.chr_y < size/3*2+y) {
-        Character.chr_y += size/3;
+    else if((e.code === 40 || e.key == "ArrowDown") && character.chr_y < size/3*2+y) {
+        character.chr_y += size/3;
     }
 
     //아무키를 누르면 게임 시작
@@ -314,8 +314,8 @@ document.addEventListener("keydown", function(e) {
 })
 
 //시작 전
-Background.draw();
-Character.draw();
+background.draw();
+character.draw();
 var b_score = 0;
 document.getElementById("score").innerHTML = score;
 document.getElementById("best_score").innerHTML = b_score;

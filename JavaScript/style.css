@@ -7,10 +7,10 @@ canvas {
 
 #setting {
     left: 5%;
-    top: 40%;
+    top: 35%;
     transform: translate(-50%, -50%);
     width: 250px;
-    height: 630px;
+    height: 725px;
     margin: 100px;
     position: absolute;
     border: 1px solid black;
@@ -28,7 +28,7 @@ canvas {
 
 #setting_controllor_div {
     width: auto;
-    height: 565px;
+    height: 650px;
     margin: 0 auto;
     border: 1px solid black;
     padding-left: 10px;
