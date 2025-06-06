@@ -8,7 +8,7 @@ HTML, CSS, JavaScript
 이 구역들을 피해 최대한 오래 생존하세요!<br>
 보드 크기, 원의 크기, 테마 등을 왼쪽에서 설정할 수 있습니다.<br>
 ## ▶️ 데모 링크
-https://simpleminigame.netlify.app/
+https://f9i34fh3-94gh3s12.netlify.app/
 ## 📝 배운점
 canvas 다루는 법
 키 입력 리스너(keydown)
