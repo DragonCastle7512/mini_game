@@ -10,9 +10,9 @@ HTML, CSS, JavaScript
 ## ▶️ 데모 링크
 https://f9i34fh3-94gh3s12.netlify.app/
 ## 📝 배운점
-canvas 다루는 법
-키 입력 리스너(keydown)
-프레임 다루기(requestAnimationFrame)
+canvas 다루는 법  
+키 입력 리스너(keydown)  
+프레임 다루기(requestAnimationFrame)  
 충돌 감지 방법
 ## 😵 문제 해결과정
 |문제|원인|해결과정|
